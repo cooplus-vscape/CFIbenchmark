@@ -5,7 +5,7 @@ Here is a Sample Usage on LLVM-CFI:
 
 
 ```
-clang++ -o bm -flto -fsanitize=cfi -fvisibility=default benchmark.cpp
+clang++ -o bm -flto -fsanitize=cfi -fvisibility=hidden benchmark.cpp
 
 (vvv) ➜  ~ ./bm
 D3-func
