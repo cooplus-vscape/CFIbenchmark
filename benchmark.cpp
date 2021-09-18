@@ -1,6 +1,29 @@
 #include <cstdint>
 #include<cstdio>
 #include<cstring>
+
+class other
+{
+public:
+    virtual void double_the_size();
+    virtual void printthis();
+};
+
+void other::printthis(){
+    void**vptr=(void**)this;
+    printf("obj start at %p\n",this);
+    printf("vptr is %p\n",*vptr);
+}
+
+
+void other::double_the_size()
+{
+    printf("other-func\n");
+
+}
+
+
+
 class base
 {
 public:
@@ -63,6 +86,7 @@ void D3::double_the_size()
 
 base *obj; //global pointer
 base *obj2;
+other *p1;
 void callback(base *obj)
 {
     obj->double_the_size();
@@ -78,6 +102,9 @@ void trigger(){
 }
 int main()
 {
+
+    p1 = new other;
+    p1->printthis();
     activatesth();
     obj = new D3;
     obj->printthis();
