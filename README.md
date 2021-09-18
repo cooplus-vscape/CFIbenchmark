@@ -16,7 +16,7 @@ vptr is 0x400da0
 obj start at 0x11c70d0
 vptr is 0x400de0
 change vptr to:0x400e20
-vptr is 0x400e20         # LLVM-CFI stop the vcall hijack toward other::double_the_size()
+vptr is 0x400e20         # LLVM-CFI stops the vcall hijacking toward other::double_the_size()
 [1]    59008 illegal hardware instruction  ./bm
 
 
@@ -30,7 +30,7 @@ obj start at 0x18490d0 # D2 obj
 vptr is 0x400de0
 change vptr to:0x400da0 # change D2 obj vptr toward D3's vtable
 vptr is 0x400da0
-D3-func               # Control Flow Distort
+D3-func               # Control Flow Distort is not stopped by LLVM-CFI, cooplus succeed ...
 ```
 
 
